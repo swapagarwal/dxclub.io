@@ -22,6 +22,89 @@
       margin-bottom: 1.3rem;
       letter-spacing: -0.1px;
     }
+    .book-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 600px;
+    }
+    @keyframes initAnimation {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(-30deg);
+      }
+    }
+    .book {
+      width: 200px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateY(-30deg);
+      transition: 1s ease;
+      animation: 1s ease 0s 1 initAnimation;
+    }
+    .book:hover {
+      transform: rotateY(0deg);
+    }
+    .book > :first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red;
+      width: 200px;
+      height: 300px;
+      transform: translateZ(25px);
+      background-color: #01060f;
+      border-radius: 0 2px 2px 0;
+      box-shadow: 5px 5px 20px #666;
+    }
+    .book::before {
+      position: absolute;
+      content: ' ';
+      background-color: blue;
+      left: 0;
+      top: 3px;
+      width: 48px;
+      height: 294px;
+      transform: translateX(172px) rotateY(90deg);
+      background: linear-gradient(90deg,
+        #fff 0%,
+        #f9f9f9 5%,
+        #fff 10%,
+        #f9f9f9 15%,
+        #fff 20%,
+        #f9f9f9 25%,
+        #fff 30%,
+        #f9f9f9 35%,
+        #fff 40%,
+        #f9f9f9 45%,
+        #fff 50%,
+        #f9f9f9 55%,
+        #fff 60%,
+        #f9f9f9 65%,
+        #fff 70%,
+        #f9f9f9 75%,
+        #fff 80%,
+        #f9f9f9 85%,
+        #fff 90%,
+        #f9f9f9 95%,
+        #fff 100%
+        );
+    }
+    .book::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: ' ';
+      width: 200px;
+      height: 300px;
+      transform: translateZ(-25px);
+      background-color: #01060f;
+      border-radius: 0 2px 2px 0;
+      box-shadow: -10px 0 50px 10px #666;
+    }
   </style>
 </head>
 <body>
@@ -35,7 +118,7 @@
         Jan's pick is <a href="https://amzn.to/2tjOOXv" target="_blank" rel="noopener noreferrer">Clean Code</a> by Robert C Martin (also known as Uncle Bob).
       </p>
       <p>
-        <a href="https://amzn.to/2tjOOXv" target="_blank" rel="noopener noreferrer"><img src="clean-code.jpg"></a>
+        <a class="book-container" href="https://amzn.to/2tjOOXv" target="_blank" rel="noopener noreferrer"><div class="book"><img src="clean-code.jpg"></div></a>
       </p>
       <p>
         Here are the reading milestones:
@@ -64,7 +147,7 @@
         P.S. Make sure you're reading the 20th Anniversary Edition and not the old one!
       </p>
       <p>
-        <a href="https://amzn.to/2STvyKR" target="_blank" rel="noopener noreferrer"><img src="the-pragmatic-programmer.jpg"></a>
+        <a class="book-container" href="https://amzn.to/2STvyKR" target="_blank" rel="noopener noreferrer"><div class="book"><img src="the-pragmatic-programmer.jpg"></div></a>
       </p>
       <p>
         Here are the reading milestones:
@@ -88,7 +171,7 @@
         March's pick is <a href="https://amzn.to/3dDgDwn" target="_blank" rel="noopener noreferrer">Don't Make Me Think</a> by Steve Krug.
       </p>
       <p>
-        <a href="https://amzn.to/3dDgDwn" target="_blank" rel="noopener noreferrer"><img src="dont-make-me-think.jpg"></a>
+        <a class="book-container" href="https://amzn.to/3dDgDwn" target="_blank" rel="noopener noreferrer"><div class="book"><img src="dont-make-me-think.jpg"></div></a>
       </p>
       <p>
         Here are the reading milestones:
@@ -112,7 +195,7 @@
         April's pick is <a href="https://amzn.to/2JwgTzG" target="_blank" rel="noopener noreferrer">Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future</a> by Ashlee Vance.
       </p>
       <p>
-        <a href="https://amzn.to/2JwgTzG" target="_blank" rel="noopener noreferrer"><img src="elon-musk.jpg"></a>
+        <a class="book-container" href="https://amzn.to/2JwgTzG" target="_blank" rel="noopener noreferrer"><div class="book"><img src="elon-musk.jpg"></div></a>
       </p>
       <p>
         Here are the reading milestones:
@@ -136,7 +219,7 @@
         May's pick is <a href="https://amzn.to/2VPx6Xq" target="_blank" rel="noopener noreferrer">Head First Design Patterns</a> by Eric Freeman and Elisabeth Robson.
       </p>
       <p>
-        <a href="https://amzn.to/2VPx6Xq" target="_blank" rel="noopener noreferrer"><img src="head-first-design-patterns.jpg"></a>
+        <a class="book-container" href="https://amzn.to/2VPx6Xq" target="_blank" rel="noopener noreferrer"><div class="book"><img src="head-first-design-patterns.jpg"></div></a>
       </p>
       <p>
         Here are the reading milestones:
@@ -160,7 +243,7 @@
         June's pick is <a href="https://amzn.to/36QN73a" target="_blank" rel="noopener noreferrer">No Hard Feelings: The Secret Power of Embracing Emotions at Work</a> by Liz Fosslien and Mollie West Duffy.
       </p>
       <p>
-        <a href="https://amzn.to/36QN73a" target="_blank" rel="noopener noreferrer"><img src="no-hard-feelings.jpg"></a>
+        <a class="book-container" href="https://amzn.to/36QN73a" target="_blank" rel="noopener noreferrer"><div class="book"><img src="no-hard-feelings.jpg"></div></a>
       </p>
       <p>
         Here are the reading milestones:
@@ -184,7 +267,7 @@
         July's pick is <a href="https://amzn.to/2ZxecFp" target="_blank" rel="noopener noreferrer">The Clean Coder</a> by Robert C Martin (also known as Uncle Bob).
       </p>
       <p>
-        <a href="https://amzn.to/2ZxecFp" target="_blank" rel="noopener noreferrer"><img src="the-clean-coder.jpg"></a>
+        <a class="book-container" href="https://amzn.to/2ZxecFp" target="_blank" rel="noopener noreferrer"><div class="book"><img src="the-clean-coder.jpg"></div></a>
       </p>
       <hr>
       <p>
